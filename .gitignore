@@ -1,0 +1,105 @@
+# ─────────────────────────────────────────────
+# Dependencies
+# ─────────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/versions
+
+# ─────────────────────────────────────────────
+# Build output
+# ─────────────────────────────────────────────
+dist/
+dist-ssr/
+build/
+*.local
+
+# ─────────────────────────────────────────────
+# Vite cache
+# ─────────────────────────────────────────────
+.vite/
+node_modules/.vite/
+node_modules/.cache/
+
+# ─────────────────────────────────────────────
+# Environment variables
+# ─────────────────────────────────────────────
+# NEVER commit real secrets — Neon connection strings,
+# PayFast/Yoco keys, etc. belong in Vercel env vars.
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Exception: if you want to commit a *template* of required
+# variables (no real values), uncomment the next line:
+# !.env.example
+
+# ─────────────────────────────────────────────
+# TypeScript
+# ─────────────────────────────────────────────
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# ─────────────────────────────────────────────
+# Logs
+# ─────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ─────────────────────────────────────────────
+# Testing / coverage
+# ─────────────────────────────────────────────
+coverage/
+.nyc_output/
+*.lcov
+
+# ─────────────────────────────────────────────
+# Editor & OS
+# ─────────────────────────────────────────────
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─────────────────────────────────────────────
+# Vercel
+# ─────────────────────────────────────────────
+.vercel/
+
+# ─────────────────────────────────────────────
+# Neon / drizzle / prisma (phase 2)
+# ─────────────────────────────────────────────
+# Local database dumps and migrations artefacts
+*.sql.gz
+drizzle/meta/_journal.json.bak
+prisma/*.db
+prisma/*.db-journal
+.neon
+
+# ─────────────────────────────────────────────
+# Misc
+# ─────────────────────────────────────────────
+.eslintcache
+.stylelintcache
+.cache/
+tmp/
+temp/
