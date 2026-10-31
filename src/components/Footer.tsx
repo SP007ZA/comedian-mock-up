@@ -9,13 +9,12 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-3">
               <span className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-primary via-secondary to-accent text-sm font-black text-white">
-                LM
+                MM
               </span>
               <span className="text-sm font-bold uppercase tracking-[0.2em]">{ARTIST.name}</span>
             </div>
             <p className="mt-5 max-w-sm text-sm text-muted-foreground">
-              {ARTIST.tagline} Available for comedy clubs, corporates, festivals and MC work across
-              South Africa and beyond.
+              {ARTIST.tagline} Available for private events, festivals, corporate activations and live stage performances across South Africa and beyond.
             </p>
             <a href={`mailto:${ARTIST.email}`} className="mt-5 inline-block text-sm font-semibold text-primary hover:underline">
               {ARTIST.email}

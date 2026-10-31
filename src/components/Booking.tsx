@@ -45,8 +45,8 @@ export function Booking() {
           <div>
             <SectionHeading
               eyebrow="Bookings"
-              title={<>Book me for <span className="text-gradient">your night</span>.</>}
-              description="Corporate functions, comedy clubs, festivals, MC work and the occasional wedding (if you're brave). Tell me what you're planning."
+              title={<>Book {ARTIST.name} for <span className="text-gradient">your next event</span>.</>}
+              description="Private events, festival stages, brand activations and live appearances. Tell me what you're planning and we'll shape the right experience."
             />
 
             <div className="mt-10 space-y-4">

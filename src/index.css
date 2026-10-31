@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,66 +9,70 @@
     --radius: 1rem;
   }
 
-  /* DARK — default */
   .dark {
     color-scheme: dark;
-    --background: 30 8% 5%;
-    --foreground: 38 30% 96%;
-    --card: 30 6% 7%;
-    --card-foreground: 38 30% 96%;
-    --popover: 30 6% 7%;
-    --popover-foreground: 38 30% 96%;
-    --primary: 38 92% 56%;
-    --primary-foreground: 30 25% 8%;
-    --secondary: 350 58% 60%;
-    --secondary-foreground: 30 25% 8%;
-    --accent: 42 65% 78%;
-    --accent-foreground: 30 25% 8%;
-    --muted: 30 5% 13%;
-    --muted-foreground: 35 10% 62%;
-    --destructive: 0 72% 55%;
+    --background: 12 18% 9%;
+    --foreground: 42 32% 94%;
+    --card: 14 13% 13%;
+    --card-foreground: 42 32% 94%;
+    --popover: 14 13% 13%;
+    --popover-foreground: 42 32% 94%;
+    --primary: 148 38% 44%;
+    --primary-foreground: 148 28% 98%;
+    --secondary: 45 75% 58%;
+    --secondary-foreground: 20 20% 10%;
+    --accent: 9 52% 46%;
+    --accent-foreground: 40 22% 96%;
+    --muted: 18 12% 17%;
+    --muted-foreground: 42 12% 72%;
+    --destructive: 0 64% 56%;
     --destructive-foreground: 0 0% 100%;
-    --border: 30 6% 16%;
-    --input: 30 6% 15%;
-    --ring: 38 92% 56%;
+    --border: 18 12% 22%;
+    --input: 18 12% 20%;
+    --ring: 148 38% 44%;
   }
 
-  /* LIGHT */
   .light {
     color-scheme: light;
-    --background: 40 30% 97%;
-    --foreground: 30 20% 10%;
-    --card: 40 25% 99%;
-    --card-foreground: 30 20% 10%;
-    --popover: 40 25% 99%;
-    --popover-foreground: 30 20% 10%;
-    --primary: 30 82% 35%;
-    --primary-foreground: 40 30% 99%;
-    --secondary: 350 60% 40%;
-    --secondary-foreground: 40 30% 99%;
-    --accent: 38 55% 55%;
-    --accent-foreground: 30 25% 8%;
-    --muted: 40 20% 92%;
-    --muted-foreground: 30 10% 38%;
-    --destructive: 0 72% 45%;
+    --background: 32 28% 96%;
+    --foreground: 155 25% 13%;
+    --card: 34 22% 99%;
+    --card-foreground: 155 25% 13%;
+    --popover: 34 22% 99%;
+    --popover-foreground: 155 25% 13%;
+    --primary: 153 35% 29%;
+    --primary-foreground: 150 20% 98%;
+    --secondary: 43 70% 52%;
+    --secondary-foreground: 24 18% 10%;
+    --accent: 9 52% 42%;
+    --accent-foreground: 40 22% 98%;
+    --muted: 30 18% 92%;
+    --muted-foreground: 155 12% 28%;
+    --destructive: 0 64% 46%;
     --destructive-foreground: 0 0% 100%;
-    --border: 40 15% 85%;
-    --input: 40 15% 88%;
-    --ring: 30 82% 35%;
+    --border: 28 16% 82%;
+    --input: 28 16% 88%;
+    --ring: 153 35% 29%;
   }
 
   * { @apply border-border; }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: "Inter", system-ui, sans-serif;
+    font-family: "Manrope", "Segoe UI", sans-serif;
+    background-image: radial-gradient(circle at top, hsl(var(--primary) / 0.12), transparent 30%), radial-gradient(circle at bottom right, hsl(var(--secondary) / 0.12), transparent 25%);
     transition: background-color 0.25s ease, color 0.25s ease;
   }
 
   h1, h2, h3, h4 {
-    font-family: "Bricolage Grotesque", "Inter", sans-serif;
-    letter-spacing: -0.03em;
-    font-weight: 800;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+    line-height: 0.94;
   }
 
   ::selection {
@@ -77,16 +83,18 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
   }
+
   .noise-overlay {
     position: fixed;
     inset: 0;
     z-index: 100;
     pointer-events: none;
-    opacity: 0.035;
+    opacity: 0.04;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
+
   .glow {
     box-shadow: 0 0 80px -20px hsl(var(--primary) / 0.55);
   }

@@ -27,20 +27,22 @@ export function Navbar() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-40 transition-all duration-300",
-        scrolled ? "border-b border-border bg-background/85 backdrop-blur-xl" : "bg-transparent"
+        scrolled
+          ? "border-b border-border/80 bg-background/80 shadow-[0_14px_30px_-18px_rgba(0,0,0,0.35)] backdrop-blur-xl"
+          : "bg-transparent"
       )}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
         <a href="#top" className="flex items-center gap-3">
-          <span className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-primary via-secondary to-accent text-sm font-black text-[#1B1407]">
-            LM
+          <span className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-primary via-secondary to-accent text-sm font-black text-[#1b120d] shadow-lg shadow-primary/20">
+            MM
           </span>
-          <span className="hidden text-sm font-bold uppercase tracking-[0.2em] sm:block">
+          <span className="hidden text-xs font-black uppercase tracking-[0.22em] text-foreground sm:block">
             {ARTIST.name}
           </span>
         </a>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-1 rounded-full border border-border/70 bg-card/70 p-1 shadow-sm backdrop-blur md:flex">
           {LINKS.map((l) => (
             <a
               key={l.href}
@@ -58,11 +60,12 @@ export function Navbar() {
             size="icon"
             onClick={toggleTheme}
             aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            className="rounded-full border border-border/70 bg-card/60"
           >
             {theme === "dark" ? <Sun /> : <Moon />}
           </Button>
 
-          <Button asChild variant="gradient" size="sm" className="hidden sm:inline-flex">
+          <Button asChild variant="gradient" size="sm" className="hidden rounded-full sm:inline-flex">
             <a href="#book">
               <Ticket /> Book me
             </a>
@@ -70,7 +73,7 @@ export function Navbar() {
 
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="secondary" size="icon" className="md:hidden" aria-label="Open menu">
+              <Button variant="secondary" size="icon" className="rounded-full md:hidden" aria-label="Open menu">
                 <Menu />
               </Button>
             </SheetTrigger>
@@ -85,7 +88,7 @@ export function Navbar() {
                 ))}
               </div>
               <SheetClose asChild>
-                <Button asChild variant="gradient" size="lg" className="mt-auto w-full">
+                <Button asChild variant="gradient" size="lg" className="mt-auto w-full rounded-2xl">
                   <a href="#book">Book me</a>
                 </Button>
               </SheetClose>

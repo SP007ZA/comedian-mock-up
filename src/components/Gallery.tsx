@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils"
 
 function VideoCard({ video }: { video: Video }) {
   const [playing, setPlaying] = useState(false)
+  const startParameter = video.startSeconds ? `&start=${video.startSeconds}` : ""
 
   return (
     <div className="group overflow-hidden rounded-3xl border border-border bg-card">
@@ -15,7 +16,7 @@ function VideoCard({ video }: { video: Video }) {
         {playing ? (
           <iframe
             className="absolute inset-0 h-full w-full"
-            src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}?autoplay=1&rel=0`}
+            src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}?autoplay=1&rel=0${startParameter}`}
             title={video.title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -41,7 +42,7 @@ function VideoCard({ video }: { video: Video }) {
       </div>
       <div className="flex items-center justify-between gap-3 p-5">
         <p className="font-semibold">{video.title}</p>
-        <span className="shrink-0 text-xs text-muted-foreground">{video.duration}</span>
+        {video.duration && <span className="shrink-0 text-xs text-muted-foreground">{video.duration}</span>}
       </div>
     </div>
   )

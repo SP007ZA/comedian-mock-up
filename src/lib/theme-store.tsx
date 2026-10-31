@@ -11,10 +11,10 @@ interface ThemeContextValue {
 const ThemeContext = createContext<ThemeContextValue | null>(null)
 
 function getInitialTheme(): Theme {
-  if (typeof window === "undefined") return "light"
+  if (typeof window === "undefined") return "dark"
   const stored = window.localStorage.getItem("theme")
   if (stored === "light" || stored === "dark") return stored
-  return "light"
+  return "dark"
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {

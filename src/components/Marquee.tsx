@@ -1,9 +1,9 @@
 const ITEMS = [
-  "Live & unfiltered",
-  "Sold-out shows",
-  "Storytelling",
-  "Crowd work",
-  "Roast master",
+  "Singer & comedian",
+  "Comedy from Lesotho",
+  "Just for laughs",
+  "Festival ready",
+  "Private events",
   "Now touring",
   "Bookings open",
 ]

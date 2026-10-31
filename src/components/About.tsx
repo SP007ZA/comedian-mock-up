@@ -4,6 +4,7 @@ import { Separator } from "@/components/ui/separator"
 import { SectionHeading } from "@/components/SectionHeading"
 import { ARTIST, CREDITS } from "@/lib/data"
 import { useDemo } from "@/lib/demo-store"
+import masapoWithCrowd from "@/assets/masapo_with_crowd.jpg"
 
 export function About() {
   const { bio } = useDemo()
@@ -15,13 +16,13 @@ export function About() {
           <div className="relative">
             <div className="grid grid-cols-2 gap-4">
               <img
-                src="https://picsum.photos/seed/lerato-about1/700/900"
-                alt="Lerato backstage"
+                src={masapoWithCrowd}
+                alt="Masapo Mpiti performing with the crowd"
                 className="col-span-2 aspect-[7/5] w-full rounded-3xl border border-border object-cover"
               />
               <img
-                src="https://picsum.photos/seed/lerato-about2/600/700"
-                alt="Lerato on stage"
+                src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=600&q=80"
+                alt="Masapo Mpiti on stage"
                 className="aspect-[6/7] w-full rounded-3xl border border-border object-cover"
               />
               <div className="flex aspect-[6/7] w-full flex-col justify-between rounded-3xl border border-border bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/20 p-6">
@@ -29,7 +30,7 @@ export function About() {
                 <div>
                   <p className="text-3xl font-extrabold leading-none text-gradient">200k+</p>
                   <p className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">
-                    People laughing along online
+                    People feeling the energy online
                   </p>
                 </div>
               </div>
@@ -38,8 +39,8 @@ export function About() {
 
           <div>
             <SectionHeading
-              eyebrow="The comedian"
-              title={<>Meet {ARTIST.name.split(" ")[0]}. <span className="text-gradient">No filter, all punchlines.</span></>}
+              eyebrow="The artist"
+              title={<>Meet {ARTIST.name}. <span className="text-gradient">Singer. Comedian. Lesotho to the world.</span></>}
             />
             <div className="mt-7 space-y-4 text-base leading-relaxed text-muted-foreground">
               {bio.split("\n\n").map((p, i) => (
@@ -48,7 +49,7 @@ export function About() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-2">
-              {["Stand-up", "MC / Host", "Roast", "Corporate", "Festivals"].map((t) => (
+              {["Live performance", "MC / Host", "Private events", "Brand activations", "Festivals"].map((t) => (
                 <Badge key={t} variant="muted" className="normal-case tracking-normal">{t}</Badge>
               ))}
             </div>
